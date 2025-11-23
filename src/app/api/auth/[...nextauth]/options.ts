@@ -34,7 +34,7 @@ export const authOptions: NextAuthOptions = {
                     }
 
                     const isPassword = await bcrypt.compare(credentials.password, user.password)
-                    console.log(user);
+                    // console.log(user);
                     
                     if (isPassword) {
                         return user

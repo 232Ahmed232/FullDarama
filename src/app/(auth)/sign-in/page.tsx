@@ -70,7 +70,7 @@ const page = () => {
 
     if (result?.url) {
         toast.success("Login success")
-        // router.replace("/dashboard")
+        router.replace("/dashboard")
     }
  }
   
