@@ -16,6 +16,11 @@ export interface User extends Document {
     verifyCodeExpiry: Date;
     isVerified: boolean;
     rating?: Types.ObjectId[];
+    isVotedActor?:boolean;
+    isVotedFemaleActor?:boolean;
+    isVotedDirector?:boolean;
+    isVotedWriter?:boolean;
+    isVotedOst?:boolean;
     createdAt?: Date;
     updatedAt?: Date;
 
@@ -53,6 +58,27 @@ const userSchema: Schema<User> = new Schema({
     isVerified: {
         type: Boolean,
         default: false
+    },
+
+    isVotedActor:{
+        type:Boolean,
+        default:false
+    },
+    isVotedFemaleActor:{
+        type:Boolean,
+        default:false
+    },
+    isVotedDirector:{
+        type:Boolean,
+        default:false
+    },
+    isVotedWriter:{
+        type:Boolean,
+        default:false
+    },
+    isVotedOst:{
+        type:Boolean,
+        default:false
     },
 
 
