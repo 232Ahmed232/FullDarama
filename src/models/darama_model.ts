@@ -5,15 +5,16 @@ export interface Darama extends Document{
   name: string;
   poster?: string;
   plot?: string;
-  ost?: string;
+  ost?: Types.ObjectId;
   year: number;
   channel: string;
   NoofEpisodes?: number;
-  writers: string[];
-  directors: string[];
-  producers: string[];
+  writers: Types.ObjectId[];
+  directors: Types.ObjectId[];
+  producers: Types.ObjectId[];
   generes: string[];
   actors: Types.ObjectId[];
+  female_actors: Types.ObjectId[];
   createdAt?: Date;
   updatedAt?: Date;
     
@@ -35,8 +36,8 @@ const daramaSchema:Schema<Darama> = new Schema({
         
     },
     ost:{
-        type:String,
-        
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Producer"
     },
     year:{
         type:Number,
@@ -51,18 +52,21 @@ const daramaSchema:Schema<Darama> = new Schema({
     },
     writers:[
         {
-        type:String,
-    },
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Writer"
+        }
     ],
     directors:[
         {
-        type:String,
-    },
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Director"
+        }
     ],
     producers:[
         {
-        type:String,
-    },
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Producer"
+        }
     ],
     generes:[
         {
@@ -70,6 +74,12 @@ const daramaSchema:Schema<Darama> = new Schema({
     },
     ],
     actors:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Actor"
+        }
+    ],
+    female_actors:[
         {
             type:mongoose.Schema.Types.ObjectId,
             ref:"Actor"

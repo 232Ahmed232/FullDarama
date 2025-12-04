@@ -7,7 +7,7 @@ interface IVote {
 }
 
 
-export interface Actor extends Document {
+export interface Female_Actor extends Document {
     username: string;
     fullName: string;
     img?: string;
@@ -22,7 +22,7 @@ export interface Actor extends Document {
 }
 
 
-const actorSchema: Schema<Actor> = new Schema({
+const Female_actorSchema: Schema<Female_Actor> = new Schema({
     username: {
         type: String,
         required: true,
@@ -74,6 +74,6 @@ const actorSchema: Schema<Actor> = new Schema({
 }, { timestamps: true })
 
 
-const actorModel = (mongoose.models.Actor as mongoose.Model<Actor>) || (mongoose.model<Actor>("Actor", actorSchema))
+const Female_actorModel = (mongoose.models.Female_actor as mongoose.Model<Female_Actor>) || (mongoose.model<Female_Actor>("Female_actor", Female_actorSchema))
 
-export default actorModel
+export default Female_actorModel

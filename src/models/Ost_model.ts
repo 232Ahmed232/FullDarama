@@ -7,13 +7,13 @@ interface IVote {
 }
 
 
-export interface Actor extends Document {
-    username: string;
+export interface   OST extends Document {
+    singer?: string;
     fullName: string;
-    img?: string;
+    link?: string;
     votes?: number;
     votedBy?: IVote[];
-    popularDaramas?: Types.ObjectId[];
+    Drama?: Types.ObjectId;
     isActive?: boolean;
     createdAt?: Date;
     updatedAt?: Date;
@@ -22,14 +22,10 @@ export interface Actor extends Document {
 }
 
 
-const actorSchema: Schema<Actor> = new Schema({
-    username: {
+const ostSchema: Schema<OST> = new Schema({
+    singer: {
         type: String,
-        required: true,
-        unique: true,
-        lowercase: true,
         trim: true,
-        index: true
     },
 
     fullName: {
@@ -39,16 +35,14 @@ const actorSchema: Schema<Actor> = new Schema({
         index: true
     },
 
-    img: {
+    link: {
         type: String,
         default: "https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg"
     },
-    popularDaramas: [
-        {
+    Drama:{
             type: mongoose.Schema.Types.ObjectId,
             ref: "Darama"
-        }
-    ],
+        },
     votedBy: [
         {
             user: {
@@ -74,6 +68,6 @@ const actorSchema: Schema<Actor> = new Schema({
 }, { timestamps: true })
 
 
-const actorModel = (mongoose.models.Actor as mongoose.Model<Actor>) || (mongoose.model<Actor>("Actor", actorSchema))
+const ostModel = (mongoose.models.Ost as mongoose.Model<OST>) || (mongoose.model<OST>("Ost", ostSchema))
 
-export default actorModel
+export default ostModel
