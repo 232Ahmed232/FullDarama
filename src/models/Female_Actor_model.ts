@@ -74,6 +74,5 @@ const Female_actorSchema: Schema<Female_Actor> = new Schema({
 }, { timestamps: true })
 
 
-const Female_actorModel = (mongoose.models.Female_actor as mongoose.Model<Female_Actor>) || (mongoose.model<Female_Actor>("Female_actor", Female_actorSchema))
+export const Female_actor = (mongoose.models.Female_actor as mongoose.Model<Female_Actor>) || (mongoose.model<Female_Actor>("Female_actor", Female_actorSchema))
 
-export default Female_actorModel

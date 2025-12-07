@@ -89,6 +89,6 @@ const daramaSchema:Schema<Darama> = new Schema({
     
 },{timestamps:true})
 
-const DaramModel = (mongoose.models.Darama as mongoose.Model<Darama>) || (mongoose.model<Darama>("Darama",daramaSchema))
+export const Darama = (mongoose.models.Darama as mongoose.Model<Darama>) || (mongoose.model<Darama>("Darama",daramaSchema))
 
-export default DaramModel
+

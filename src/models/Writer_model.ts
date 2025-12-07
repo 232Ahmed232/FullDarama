@@ -74,6 +74,5 @@ const writerSchema: Schema<Writer> = new Schema({
 }, { timestamps: true })
 
 
-const writerModel = (mongoose.models.Writer as mongoose.Model<Writer>) || (mongoose.model<Writer>("Writer", writerSchema))
+export const Writer = (mongoose.models.Writer as mongoose.Model<Writer>) || (mongoose.model<Writer>("Writer", writerSchema))
 
-export default writerModel

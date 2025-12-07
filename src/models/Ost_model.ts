@@ -68,6 +68,5 @@ const ostSchema: Schema<OST> = new Schema({
 }, { timestamps: true })
 
 
-const ostModel = (mongoose.models.Ost as mongoose.Model<OST>) || (mongoose.model<OST>("Ost", ostSchema))
+export const OST = (mongoose.models.Ost as mongoose.Model<OST>) || (mongoose.model<OST>("Ost", ostSchema))
 
-export default ostModel

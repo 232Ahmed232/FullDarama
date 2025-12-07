@@ -1,5 +1,5 @@
 import dbConnect from "@/lib/dbConnect";
-import UserModel from "@/models/User";
+import {User} from "@/models/User";
 import { success, z } from "zod";
 
 
@@ -38,7 +38,7 @@ export async function GET(request:Request){
 
        const {username} = result.data
 
-     const existingUsername   = await UserModel.findOne({username})
+     const existingUsername   = await User.findOne({username})
        
       if (existingUsername) {
          return Response.json(

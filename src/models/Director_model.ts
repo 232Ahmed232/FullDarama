@@ -74,6 +74,5 @@ const directorSchema: Schema<Director> = new Schema({
 }, { timestamps: true })
 
 
-const directorModel = (mongoose.models.Director as mongoose.Model<Director>) || (mongoose.model<Director>("Director", directorSchema))
+export const Director = (mongoose.models.Director as mongoose.Model<Director>) || (mongoose.model<Director>("Director", directorSchema))
 
-export default directorModel

@@ -74,6 +74,5 @@ const actorSchema: Schema<Actor> = new Schema({
 }, { timestamps: true })
 
 
-const actorModel = (mongoose.models.Actor as mongoose.Model<Actor>) || (mongoose.model<Actor>("Actor", actorSchema))
+export const Actor = (mongoose.models.Actor as mongoose.Model<Actor>) || (mongoose.model<Actor>("Actor", actorSchema))
 
-export default actorModel

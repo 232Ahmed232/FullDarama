@@ -1,6 +1,6 @@
 import dbConnect from "@/lib/dbConnect";
 
-import UserModel from "@/models/User";
+import {User} from "@/models/User";
 
 
 export async function POST(request:Request){
@@ -14,7 +14,7 @@ export async function POST(request:Request){
     
      const decodedUsername =  decodeURIComponent(username)
     
-     const user = await UserModel.findOne({username:decodedUsername})
+     const user = await User.findOne({username:decodedUsername})
 
      if (!user) {
         return Response.json(

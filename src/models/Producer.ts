@@ -74,6 +74,5 @@ const producerSchema: Schema<Producer> = new Schema({
 }, { timestamps: true })
 
 
-const producerModel = (mongoose.models.Producer as mongoose.Model<Producer>) || (mongoose.model<Producer>("Producer", producerSchema))
+export const Producer = (mongoose.models.Producer as mongoose.Model<Producer>) || (mongoose.model<Producer>("Producer", producerSchema))
 
-export default producerModel
