@@ -8,8 +8,8 @@ export async function POST(request:Request){
 
     try {
       const {username,code} = await request.json()
-    console.log(username);
-    console.log(code);
+    // console.log(username);
+    // console.log(code);
     
     
      const decodedUsername =  decodeURIComponent(username)

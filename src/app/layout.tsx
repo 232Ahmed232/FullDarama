@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AuthProvider from "@/context/AuthProvider";
 import { Toaster } from "@/components/ui/sonner";
+import Image from "next/image";
+import fimage from "../../public/pics/HomeScreen.webp"
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +33,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+          <div className="m-12">
+        <Image
+          className="dark:invert mt-4"
+          src={fimage}
+          alt="Next.js logo"
+          
+          priority
+        />
+       <div className="bg-black w-full h-12 m-2 flex">
+        <Link href="/Home" className="text-white">
+          Home
+        </Link>
+       </div>
+       
+    </div>
         {children}
         <Toaster />
       </body>
