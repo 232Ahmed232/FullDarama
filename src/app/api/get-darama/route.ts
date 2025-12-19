@@ -4,7 +4,7 @@ import {getDramasWithActorsAndRatings} from "@/lib/db_aggregation.js"
 export async function GET(request:Request){
     await dbConnect()
     const darama = await getDramasWithActorsAndRatings()
-    console.log(darama);
+    // console.log(darama);
 
     return Response.json(
             {
