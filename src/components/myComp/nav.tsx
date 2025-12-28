@@ -38,13 +38,13 @@ export function Nav() {
             <ul className="grid w-[200px] gap-4">
               <li>
                 <NavigationMenuLink asChild>
-                  <Link href="#">ARY</Link>
+                  <Link href="/channel/ARY">ARY</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="#">GEO</Link>
+                  <Link href="/channel/GEO">GEO</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="#">HUM</Link>
+                  <Link href="/channel/HUM">HUM</Link>
                 </NavigationMenuLink>
               </li>
             </ul>
@@ -57,19 +57,19 @@ export function Nav() {
             <ul className="grid w-[200px] gap-4">
               <li>
                 <NavigationMenuLink asChild>
-                  <Link href="#">2025</Link>
+                  <Link href="/year/2025">2025</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="#">2024</Link>
+                  <Link href="/year/2024">2024</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="#">2023</Link>
+                  <Link href="/year/2023">2023</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="#">2022</Link>
+                  <Link href="/year/2022">2022</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="#">2021</Link>
+                  <Link href="/year/2021">2021</Link>
                 </NavigationMenuLink>
               </li>
             </ul>
