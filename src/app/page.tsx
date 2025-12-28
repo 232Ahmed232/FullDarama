@@ -6,13 +6,15 @@ import { Card } from "@/components/myComp/card";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Darama } from "@/models/darama_model";
+import { useDrama } from "@/context/dramaContext";
 export default function Home() {
   const [dramas,setDramas] = useState([])
+  const {list,setList} = useDrama()
   useEffect(()=>{
     const getdarama = async()=>{
     const respose = await axios.get("api/get-darama")
     if (respose.data.success) {
-      setDramas(respose.data.message);
+      setList(respose.data.message);
     }
     
     
@@ -24,10 +26,10 @@ export default function Home() {
   
   return (
   <div className="flex justify-around flex-wrap items-center-safe">
-    {dramas.map((ele:any)=>(
-      <Card name={ele.name} img={ele.poster} rating={ele.averageRating}/>
-
-    ))}
+    {list.length>0? list.map((ele:any)=>(
+          <Card key={ele._id} name={ele.name} img={ele.poster} rating={ele.averageRating}/>
+    
+        )):(<h1>No Darama Found</h1>) }
     
   </div>
   );

@@ -7,6 +7,9 @@ import Image from "next/image";
 import fimage from "../../public/pics/HomeScreen.webp"
 import Link from "next/link";
 import { Nav } from "@/components/myComp/nav";
+import {DramaContextProvider} from "@/context/dramaContext"
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <DramaContextProvider>
       <AuthProvider>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -49,6 +53,7 @@ export default function RootLayout({
         <Toaster />
       </body>
       </AuthProvider>
+      </DramaContextProvider>
     </html>
   );
 }
