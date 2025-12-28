@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/sonner";
 import Image from "next/image";
 import fimage from "../../public/pics/HomeScreen.webp"
 import Link from "next/link";
+import { Nav } from "@/components/myComp/nav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,11 +42,7 @@ export default function RootLayout({
           
           priority
         />
-       <div className="bg-black w-full h-12 m-2 flex">
-        <Link href="/Home" className="text-white">
-          Home
-        </Link>
-       </div>
+      <Nav />
        
     </div>
         {children}
