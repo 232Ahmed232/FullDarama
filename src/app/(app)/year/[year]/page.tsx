@@ -8,24 +8,15 @@ import React, { useEffect, useState } from 'react'
 
 function page() {
     const pramas = useParams()
-    const {list,setList} = useDrama()
+    const {list} = useDrama()
     
-  useEffect(()=>{
-    const getdarama = async()=>{
-    const respose = await axios.get("/api/get-darama")
-    if (respose.data.success) {
-      setList(respose.data.message.filter((ele:any) => ele.year == pramas.year));
-    }
-    
-    
-    }
-    getdarama()
-  },[])
+ 
 
-  
+    const  filterlist = list.filter((ele:any) => ele.year == pramas.year)
+
   return (
   <div className="flex justify-around flex-wrap items-center-safe">
-    {list.length>0? list.map((ele:any)=>(
+    {filterlist.length>0? filterlist.map((ele:any)=>(
       <Card key={ele._id} name={ele.name} img={ele.poster} rating={ele.averageRating}/>
 
     )):(<h1>No Darama Found</h1>) }

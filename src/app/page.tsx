@@ -7,30 +7,34 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Darama } from "@/models/darama_model";
 import { useDrama } from "@/context/dramaContext";
+import { Input } from "@/components/myComp/search";
 export default function Home() {
-  const [dramas,setDramas] = useState([])
-  const {list,setList} = useDrama()
-  useEffect(()=>{
-    const getdarama = async()=>{
-    const respose = await axios.get("api/get-darama")
-    if (respose.data.success) {
-      setList(respose.data.message);
-    }
-    
-    
-    }
-    getdarama()
-  },[])
-
-  console.log(dramas);
+  const { list, search } = useDrama()
   
+ const searchList = list.filter((item) => {
+        const searchTo = search.toLowerCase()
+        const name = item.name.toLowerCase()
+
+
+        return search && name.includes(searchTo)
+    })
+
+
   return (
-  <div className="flex justify-around flex-wrap items-center-safe">
-    {list.length>0? list.map((ele:any)=>(
-          <Card key={ele._id} name={ele.name} img={ele.poster} rating={ele.averageRating}/>
-    
-        )):(<h1>No Darama Found</h1>) }
-    
-  </div>
+    <div>
+      <Input />
+      <div className="flex justify-around flex-wrap items-center-safe">
+        {
+          searchList.length>0? searchList.map((ele: any) => (
+          <Card key={ele._id} name={ele.name} img={ele.poster} rating={ele.averageRating} />
+
+        )): list.length > 0 ? list.map((ele: any) => (
+          <Card key={ele._id} name={ele.name} img={ele.poster} rating={ele.averageRating} />
+
+        )) : (<h1>No Darama Found</h1>)
+        }
+
+      </div>
+    </div>
   );
 }
