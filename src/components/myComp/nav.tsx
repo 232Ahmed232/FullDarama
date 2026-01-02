@@ -22,13 +22,13 @@ export function Nav() {
 //   const isMobile = useIsMobile()
 
   return (
-    <NavigationMenu className="bg-slate-400 w-screen my-4" >
+    <NavigationMenu className=" w-full my-4 " >
       <NavigationMenuList className="flex-wrap">
         
         
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/">Home</Link>
+            <Link href="/Home">Home</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         
@@ -38,13 +38,13 @@ export function Nav() {
             <ul className="grid w-[200px] gap-4">
               <li>
                 <NavigationMenuLink asChild>
-                  <Link href="/channel/ARY">ARY</Link>
+                  <Link href="/Home/channel/ARY">ARY</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="/channel/GEO">GEO</Link>
+                  <Link href="/Home/channel/GEO">GEO</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="/channel/HUM">HUM</Link>
+                  <Link href="/Home/channel/HUM">HUM</Link>
                 </NavigationMenuLink>
               </li>
             </ul>
@@ -57,19 +57,19 @@ export function Nav() {
             <ul className="grid w-[200px] gap-4">
               <li>
                 <NavigationMenuLink asChild>
-                  <Link href="/year/2025">2025</Link>
+                  <Link href="/Home/year/2025">2025</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="/year/2024">2024</Link>
+                  <Link href="/Home/year/2024">2024</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="/year/2023">2023</Link>
+                  <Link href="/Home/year/2023">2023</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="/year/2022">2022</Link>
+                  <Link href="/Home/year/2022">2022</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="/year/2021">2021</Link>
+                  <Link href="/Home/year/2021">2021</Link>
                 </NavigationMenuLink>
               </li>
             </ul>

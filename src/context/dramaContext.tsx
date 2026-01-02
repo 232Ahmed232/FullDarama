@@ -6,6 +6,7 @@ import axios from "axios";
 
 
 type DramaItem = {
+    _id:string;
     name: string;
     poster?: string;
     plot?: string;

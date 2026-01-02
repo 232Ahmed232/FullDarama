@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import AuthProvider from "@/context/AuthProvider";
 import { Toaster } from "@/components/ui/sonner";
+import fimage from "../../../../public/pics/HomeScreen.webp"
 import Image from "next/image";
-import fimage from "../../public/pics/HomeScreen.webp"
 import Link from "next/link";
 import { Nav } from "@/components/myComp/nav";
 import {DramaContextProvider} from "@/context/dramaContext"
@@ -38,7 +37,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+          <div className="m-12">
+        <Image
+          className="dark:invert mt-4"
+          src={fimage}
+          alt="Next.js logo"
+          
+          priority
+        />
+      <Nav />
        
+    </div>
         {children}
         <Toaster />
       </body>

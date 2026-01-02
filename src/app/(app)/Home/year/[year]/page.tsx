@@ -2,9 +2,7 @@
 
 import { Card } from '@/components/myComp/card'
 import { useDrama } from '@/context/dramaContext'
-import axios from 'axios'
 import { useParams } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
 
 function page() {
     const pramas = useParams()
