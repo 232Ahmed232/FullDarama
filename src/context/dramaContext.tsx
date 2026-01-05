@@ -8,7 +8,7 @@ import axios from "axios";
 type DramaItem = {
     _id:string;
     name: string;
-    poster?: string;
+    poster?: string | undefined;
     plot?: string;
     ost?: Types.ObjectId;
     year: number;
@@ -17,7 +17,7 @@ type DramaItem = {
     writers: Types.ObjectId[];
     directors: Types.ObjectId[];
     producers: Types.ObjectId[];
-    generes: string[];
+    genres: string[];
     actors: Types.ObjectId[];
     female_actors: Types.ObjectId[];
     createdAt?: Date;

@@ -13,7 +13,7 @@ export interface Darama extends Document{
   writers: Types.ObjectId[];
   directors: Types.ObjectId[];
   producers: Types.ObjectId[];
-  generes: string[];
+  genres: string[];
   actors: Types.ObjectId[];
   female_actors: Types.ObjectId[];
   createdAt?: Date;
@@ -69,7 +69,7 @@ const daramaSchema:Schema<Darama> = new Schema({
             ref:"Producer"
         }
     ],
-    generes:[
+    genres:[
         {
         type:String,
     },
