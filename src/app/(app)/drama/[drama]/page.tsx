@@ -18,8 +18,10 @@ function page() {
     // console.log(list);
     
     const objDrama = list.find(item => item._id == paramas.drama)
+    console.log(objDrama);
+    
   return (
-    <div className='flex flex-col  items-center w-3/4 justify-center'>
+    <div className='flex flex-col mx-auto  items-center w-3/4 justify-center'>
       <h1>{objDrama?.name}</h1>
       <img src={objDrama?.poster}/>
       <div className='flex flex-row'>  
@@ -27,9 +29,13 @@ function page() {
         <div key={ele} className='border-2 m-2 px-2 rounded-2xl'>{ele}</div>
       ))}
       </div>
-      <p>
+      <p className='w-3/4'>
         {objDrama?.plot}
       </p>
+      <h3><span className='font-bold'>Year: </span> {objDrama?.year}</h3>
+      {/* <h3><span>No of Episodes: </span> {objDrama?.NoofEpisodes}</h3> */}
+      <h3><span className='font-bold'>Channel : </span> {objDrama?.channel}</h3>
+      <h3>Rating</h3>
     </div>
   )
 }
