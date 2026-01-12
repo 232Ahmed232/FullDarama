@@ -1,7 +1,7 @@
 import mongoose,{Schema,Document,Types} from "mongoose";
 
 
-export interface Darama extends Document{
+export interface DaramaType extends Document{
   id: Types.ObjectId;
   name: string;
   poster?: string;
@@ -22,7 +22,7 @@ export interface Darama extends Document{
     
 }
 
-const daramaSchema:Schema<Darama> = new Schema({
+const daramaSchema:Schema<DaramaType> = new Schema({
     name:{
         type:String,
         required:true
@@ -90,6 +90,6 @@ const daramaSchema:Schema<Darama> = new Schema({
     
 },{timestamps:true})
 
-export const Darama = (mongoose.models.Darama as mongoose.Model<Darama>) || (mongoose.model<Darama>("Darama",daramaSchema))
+export const Darama = (mongoose.models.Darama as mongoose.Model<DaramaType>) || (mongoose.model<DaramaType>("Darama",daramaSchema))
 
 

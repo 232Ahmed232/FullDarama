@@ -1,7 +1,7 @@
 import mongoose,{Schema,Types,Document} from "mongoose";
 
 
-export interface Rating extends Document {
+export interface RatingType extends Document {
     stars:number;
     review:string;
     darama:Types.ObjectId;
@@ -11,7 +11,7 @@ export interface Rating extends Document {
 }
 
 
-const ratingSchema:Schema<Rating> = new Schema({
+const ratingSchema:Schema<RatingType> = new Schema({
     stars:{
         type:Number
     },
@@ -29,5 +29,5 @@ const ratingSchema:Schema<Rating> = new Schema({
 },{timestamps:true})
 
 
-export const Rating = (mongoose.models.Rating as mongoose.Model<Rating>) || (mongoose.model<Rating>("Rating",ratingSchema))
+export const Rating = (mongoose.models.Rating as mongoose.Model<RatingType>) || (mongoose.model<RatingType>("Rating",ratingSchema))
 

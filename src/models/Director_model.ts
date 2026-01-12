@@ -7,7 +7,7 @@ interface IVote {
 }
 
 
-export interface Director extends Document {
+export interface DirectorType extends Document {
     username: string;
     fullName: string;
     img?: string;
@@ -22,7 +22,7 @@ export interface Director extends Document {
 }
 
 
-const directorSchema: Schema<Director> = new Schema({
+const directorSchema: Schema<DirectorType> = new Schema({
     username: {
         type: String,
         required: true,
@@ -74,5 +74,5 @@ const directorSchema: Schema<Director> = new Schema({
 }, { timestamps: true })
 
 
-export const Director = (mongoose.models.Director as mongoose.Model<Director>) || (mongoose.model<Director>("Director", directorSchema))
+export const Director = (mongoose.models.Director as mongoose.Model<DirectorType>) || (mongoose.model<DirectorType>("Director", directorSchema))
 

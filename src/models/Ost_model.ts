@@ -7,7 +7,7 @@ interface IVote {
 }
 
 
-export interface   OST extends Document {
+export interface   OSTtype extends Document {
     singer?: string;
     fullName: string;
     link?: string;
@@ -22,7 +22,7 @@ export interface   OST extends Document {
 }
 
 
-const ostSchema: Schema<OST> = new Schema({
+const ostSchema: Schema<OSTtype> = new Schema({
     singer: {
         type: String,
         trim: true,
@@ -68,5 +68,5 @@ const ostSchema: Schema<OST> = new Schema({
 }, { timestamps: true })
 
 
-export const OST = (mongoose.models.Ost as mongoose.Model<OST>) || (mongoose.model<OST>("Ost", ostSchema))
+export const OST = (mongoose.models.Ost as mongoose.Model<OSTtype>) || (mongoose.model<OSTtype>("Ost", ostSchema))
 

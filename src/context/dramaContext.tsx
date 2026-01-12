@@ -1,11 +1,20 @@
 'use client'
 
-import { createContext, useContext, useEffect, useState } from "react"
+import React, { createContext, useContext, useEffect, useState } from "react"
 import mongoose,{Schema,Document,Types} from "mongoose";
 import axios from "axios";
 
+import { Female_Actor } from "@/models/Female_Actor_model";
+import { Actor } from "@/models/Actor_model";
 
 type DramaItem = {
+    averageRating?: React.ReactNode;
+    actorDetails?:React.ReactNode[];
+    producerDetails?:React.ReactNode[];
+    writerDetails?:React.ReactNode[];
+    directorsDetails?:React.ReactNode[];
+
+    Female_ActorsDetails?:React.ReactNode[];
     _id:string;
     name: string;
     poster?: string | undefined;
