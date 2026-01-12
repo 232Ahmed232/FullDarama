@@ -76,6 +76,7 @@ const page = () => {
     console.log(response);
     
     toast.success(response.data.message)
+    
     router.replace(`/verify/${username}`)
   } catch (error) {
      const axiosError = error as AxiosError<ApiResponse>;
