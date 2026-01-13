@@ -6,7 +6,8 @@ import fimage from "../../../../public/pics/HomeScreen.webp"
 import Image from "next/image";
 import Link from "next/link";
 import { Nav } from "@/components/myComp/nav";
-import {DramaContextProvider} from "@/context/dramaContext"
+import { DramaContextProvider } from "@/context/dramaContext"
+import { NavAndBtn } from "@/components/myComp/NavAndBtn";
 
 
 
@@ -30,28 +31,29 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <DramaContextProvider>
-      <AuthProvider>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-          <div className="m-12">
-        <Image
-          className="dark:invert mt-4"
-          src={fimage}
-          alt="Next.js logo"
-          
-          priority
-        />
-      <Nav />
-       
-    </div>
-        {children}
-        <Toaster />
-      </body>
-      </AuthProvider>
+        <AuthProvider>
+          <body
+            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          >
+            <div className="m-12">
+              <Image
+                className="dark:invert mt-4"
+                src={fimage}
+                alt="Next.js logo"
+
+                priority
+              />
+              <NavAndBtn/>
+
+            </div>
+            {children}
+            <Toaster />
+          </body>
+        </AuthProvider>
       </DramaContextProvider>
     </html>
   );
