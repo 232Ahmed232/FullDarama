@@ -3,6 +3,8 @@
 import React from 'react'
 
 import { useDrama } from '@/context/dramaContext'
+import { useSession } from 'next-auth/react'
+
 import { useParams } from 'next/navigation'
 import { Types } from "mongoose";
 import Image from "next/image";
@@ -13,6 +15,10 @@ import { Female_Actor } from '@/models/Female_Actor_model';
 function page() {
   const paramas = useParams()
   const { list } = useDrama()
+
+  const { data: session } = useSession()
+  
+  const user = session?.user
   // const id:Types.ObjectId = paramas.drama
   // console.log(paramas);
 
@@ -20,6 +26,7 @@ function page() {
 
   const objDrama = list.find(item => item._id == paramas.drama)
   console.log(objDrama);
+  console.log(user);
 
   const cla = 'font-bold my-5 italic text-3xl'
 
