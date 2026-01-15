@@ -11,6 +11,7 @@ import Image from "next/image";
 
 import { Star, StarHalf, StarOff } from "lucide-react";
 import { Female_Actor } from '@/models/Female_Actor_model';
+import { Rate } from '@/components/myComp/Rate'
 
 function page() {
   const paramas = useParams()
@@ -45,7 +46,8 @@ function page() {
       <h3><span className='font-bold'>Year: </span> {objDrama?.year}</h3>
       {/* <h3><span>No of Episodes: </span> {objDrama?.NoofEpisodes}</h3> */}
       <h3><span className='font-bold'>Channel : </span> {objDrama?.channel}</h3>
-      <h3>Rating: {objDrama?.averageRating}
+      <h3>
+        Rating: {objDrama?.averageRating}
 
 
         {objDrama?.averageRating ?
@@ -63,7 +65,7 @@ function page() {
         {/* Half star */}
         {/* <StarHalf color="gold" size={32} strokeWidth={2} /> */}
       </h3>
-
+      <Rate/>
       <h2 className={cla}>Cast</h2>
       <div className='flex gap-4'>
             {objDrama?.Female_ActorsDetails?.map((ele:any) => (
