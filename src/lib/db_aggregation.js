@@ -341,7 +341,5 @@ export {
   getOSTWithDramas,
   getWritersWithDramas,
   getProducersWithDramas
-  
-
 }
 

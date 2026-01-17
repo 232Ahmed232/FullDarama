@@ -11,7 +11,8 @@ import Image from "next/image";
 
 import { Star, StarHalf, StarOff } from "lucide-react";
 import { Female_Actor } from '@/models/Female_Actor_model';
-import { Rate } from '@/components/myComp/Rate'
+import { Rate } from '@/components/myComp/rate2'
+import { any } from 'zod'
 
 function page() {
   const paramas = useParams()
@@ -65,7 +66,7 @@ function page() {
         {/* Half star */}
         {/* <StarHalf color="gold" size={32} strokeWidth={2} /> */}
       </h3>
-      <Rate/>
+      <Rate dramaId={paramas.drama} />
       <h2 className={cla}>Cast</h2>
       <div className='flex gap-4'>
             {objDrama?.Female_ActorsDetails?.map((ele:any) => (
