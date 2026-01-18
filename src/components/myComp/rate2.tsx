@@ -60,6 +60,7 @@ export function Rate({ dramaId }: { dramaId: any }) {
             
             if (response.data.success) {
                 toast.success(response.data.message || "Rating submitted successfully!")
+                console.log(response.data.message);
                 
                 setIsDialogOpen(false)
                 form.reset()
@@ -68,10 +69,7 @@ export function Rate({ dramaId }: { dramaId: any }) {
             }
             
             
-            // For demo purposes
-            toast.success("Rating submitted successfully!")
-            setIsDialogOpen(false)
-            form.reset()
+            
             
         } catch (error) {
             console.error("Rating submission error:", error)
