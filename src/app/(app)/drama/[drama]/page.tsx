@@ -27,8 +27,8 @@ function page() {
   // console.log(list);
 
   const objDrama = list.find(item => item._id == paramas.drama)
-  console.log(objDrama);
-  console.log(user);
+  // console.log(objDrama);
+  // console.log(user);
 
   const cla = 'font-bold my-5 italic text-3xl'
 
@@ -48,7 +48,7 @@ function page() {
       {/* <h3><span>No of Episodes: </span> {objDrama?.NoofEpisodes}</h3> */}
       <h3><span className='font-bold'>Channel : </span> {objDrama?.channel}</h3>
       <h3>
-        Rating: {objDrama?.averageRating}
+       <span className='font-bold'> Rating : </span> {objDrama?.averageRating}
 
 
         {objDrama?.averageRating ?

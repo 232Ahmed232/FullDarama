@@ -63,7 +63,7 @@ const getDramasWithActorsAndRatings = async () => {
       $lookup: {
         from: "ratings",
         localField: "_id",
-        foreignField: "drama",
+        foreignField: "darama",
         as: "ratings"
       }
     },

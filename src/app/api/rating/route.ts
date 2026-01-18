@@ -62,6 +62,8 @@ export async function POST(request: Request) {
         const avgStars =
             allRatings.reduce((sum, r) => sum + r.stars, 0) / allRatings.length;
 
+
+
         // 7️⃣ Respond with success
         return Response.json({
             message: "Rating added ",
