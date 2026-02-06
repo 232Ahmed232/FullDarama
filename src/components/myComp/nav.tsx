@@ -78,7 +78,7 @@ export function Nav() {
 
          <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/docs">To Vote</Link>
+            <Link href="/toVote">To Vote</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
