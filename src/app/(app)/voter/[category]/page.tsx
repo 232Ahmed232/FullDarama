@@ -1,4 +1,5 @@
 'use client'
+import { CardImage } from '@/components/myComp/cardImage';
 import axios from 'axios';
 import { useParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
@@ -43,7 +44,15 @@ function page() {
       console.log(list);
       
   return (
-    <div>{params.category}</div>
+    <div>
+      <h1 className='text-3xl font-bold text-center my-4'>Vote For {params.category}</h1>
+      <div className='flex '>
+      {(list.length>0)? list.map((ele:any) => (
+        <CardImage key={ele._id} img={ele.img} name={ele.fullName} username={ele.username}/>
+      )) :"Nothing to vote"}
+      
+      </div>
+      </div>
   )
 }
 
