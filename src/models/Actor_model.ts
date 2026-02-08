@@ -1,4 +1,5 @@
 import mongoose, { Schema, Document, Types } from "mongoose";
+import { string } from "zod";
 
 
 interface IVote {
@@ -12,6 +13,7 @@ export interface ActorType extends Document {
     fullName: string;
     img?: string;
     votes?: number;
+    role?:string;
     votedBy?: IVote[];
     popularDaramas?: Types.ObjectId[];
     isActive?: boolean;
@@ -65,6 +67,9 @@ const actorSchema: Schema<ActorType> = new Schema({
     votes: {
         type: Number,
         default: 0
+    },
+    role:{
+        type:String
     },
     isActive: {
         type: Boolean,

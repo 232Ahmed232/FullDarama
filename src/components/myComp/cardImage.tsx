@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-export function CardImage({img,name,username}:any) {
+export function CardImage({img,name,username,role}:any) {
   return (
     <Card className="relative mx-auto w-full max-w-sm pt-0">
       <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
@@ -24,12 +24,11 @@ export function CardImage({img,name,username}:any) {
         </CardAction>
         <CardTitle>{name}</CardTitle>
         <CardDescription>
-          A practical talk on component APIs, accessibility, and shipping
-          faster.
+          {role}
         </CardDescription>
       </CardHeader>
       <CardFooter>
-        <Button className="w-full">Votet</Button>
+        <Button className="w-full">Vote</Button>
       </CardFooter>
     </Card>
   )
