@@ -9,7 +9,13 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-export function CardImage({img,name,username,role}:any) {
+export function CardImage({img,name,username,role,actId}:any) {
+
+
+  const voted = async()=>{
+    console.log(actId);
+    
+  }
   return (
     <Card className="relative mx-auto w-full max-w-sm pt-0">
       <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
@@ -28,7 +34,7 @@ export function CardImage({img,name,username,role}:any) {
         </CardDescription>
       </CardHeader>
       <CardFooter>
-        <Button className="w-full">Vote</Button>
+        <Button onClick={voted}  className="w-full">Vote</Button>
       </CardFooter>
     </Card>
   )

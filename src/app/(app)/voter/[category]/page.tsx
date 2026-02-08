@@ -48,7 +48,7 @@ function page() {
       <h1 className='text-3xl font-bold text-center my-4'>Vote For {params.category}</h1>
       <div className='flex '>
       {(list.length>0)? list.map((ele:any) => (
-        <CardImage key={ele._id} img={ele.img} name={ele.fullName} username={ele.username} role={ele.role}/>
+        <CardImage key={ele._id} img={ele.img} name={ele.fullName} username={ele.username} role={ele.role} actId = {ele._id} />
       )) :"Nothing to vote"}
       
       </div>
