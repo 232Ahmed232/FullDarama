@@ -12,11 +12,11 @@ import {
 import { toast } from "sonner"
 import { ApiResponse } from "@/types/ApiResponse"
 
-export function CardImage({ img, name, username, role, actId }: any) {
+export function CardImage({ img, name, username, role, actId,cate }: any) {
 
 
   const voted = async () => {
-    console.log(actId);
+    console.log(cate);
     try {
       const response = await axios.post<ApiResponse>("/api/voteActor", { actId })
       if (response.data.success) {

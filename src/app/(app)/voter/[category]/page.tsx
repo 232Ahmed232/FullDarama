@@ -35,6 +35,13 @@ function page() {
           }
 
         }
+        else if (params.category == "writer") {
+          const respose = await axios.get("/api/get-voteWriter")
+          if (respose.data.success) {
+            setList(respose.data.message);
+          }
+
+        }
 
 
         }
@@ -48,7 +55,7 @@ function page() {
       <h1 className='text-3xl font-bold text-center my-4'>Vote For {params.category}</h1>
       <div className='flex '>
       {(list.length>0)? list.map((ele:any) => (
-        <CardImage key={ele._id} img={ele.img} name={ele.fullName} username={ele.username} role={ele.role} actId = {ele._id} />
+        <CardImage key={ele._id} img={ele.img} name={ele.fullName} username={ele.username} role={ele.role} actId = {ele._id} cate={params.category} />
       )) :"Nothing to vote"}
       
       </div>
