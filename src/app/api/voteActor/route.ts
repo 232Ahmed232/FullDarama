@@ -17,7 +17,7 @@ export async function POST(request: Request) {
     const userId = session.user._id;
     const userAlreadyVoted:any = await User.findById(userId)
     if (userAlreadyVoted.isVotedActor) {
-        return Response.json({ message: "User already Voted" }, { status: 501 });
+        return Response.json({ message: "User already Voted" }, { status: 201 });
     }
 
 

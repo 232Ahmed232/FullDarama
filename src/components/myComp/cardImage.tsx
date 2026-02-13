@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import axios, { AxiosError } from "axios"
 import {
   Card,
   CardAction,
@@ -8,13 +9,34 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { toast } from "sonner"
+import { ApiResponse } from "@/types/ApiResponse"
 
-export function CardImage({img,name,username,role,actId}:any) {
+export function CardImage({ img, name, username, role, actId }: any) {
 
 
-  const voted = async()=>{
+  const voted = async () => {
     console.log(actId);
-    
+    try {
+      const response = await axios.post<ApiResponse>("/api/voteActor", { actId })
+      if (response.data.success) {
+        toast.success(response.data.message || "Voting submitted successfully!")
+        console.log(response.data.message);
+
+
+      } else {
+        toast.error(response.data.message || "Failed to Vote")
+      }
+    } catch (error) {
+      console.error("Rating submission error:", error)
+
+      const axiosError = error as AxiosError<ApiResponse>
+      toast.error(
+        axiosError.response?.data.message ||
+        "Something went wrong. Please try again."
+      )
+    }
+
   }
   return (
     <Card className="relative mx-auto w-full max-w-sm pt-0">
@@ -34,7 +56,7 @@ export function CardImage({img,name,username,role,actId}:any) {
         </CardDescription>
       </CardHeader>
       <CardFooter>
-        <Button onClick={voted}  className="w-full">Vote</Button>
+        <Button onClick={voted} className="w-full">Vote</Button>
       </CardFooter>
     </Card>
   )

@@ -13,7 +13,6 @@ type DramaItem = {
     producerDetails?:React.ReactNode[];
     writerDetails?:React.ReactNode[];
     directorsDetails?:React.ReactNode[];
-
     Female_ActorsDetails?:React.ReactNode[];
     _id:string;
     name: string;
